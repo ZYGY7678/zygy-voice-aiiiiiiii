@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: zygy-voice-aiiiiiiii
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: EXT_PATH
+        value: "8"
+      - key: TEXT_MODEL
+        value: "gemini-3.6-flash"
+      - key: TTS_MODEL
+        value: "gemini-3.8-flash-tts"
+      - key: GEMINI_API_KEYS
+        sync: false
+      - key: YEMOT_TOKEN
+        sync: false
